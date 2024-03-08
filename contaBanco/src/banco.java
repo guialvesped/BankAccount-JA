@@ -1,8 +1,6 @@
-import javax.sound.midi.Soundbank;
-import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
-public class banco {
+public class Banco {
     public static void main(String[] args) {
 
         Scanner leitura = new Scanner(System.in);
@@ -19,8 +17,7 @@ public class banco {
         System.out.println("E o tipo da sua conta:");
         String tpconta = leitura.nextLine();
         System.out.println("Acesso Concedido");
-
-        while (continuar != 1) {
+        
             System.out.println("************************************************");
             System.out.println("Nome: " + nome);
             System.out.println("Tipo de conta: " + tpconta);
@@ -28,8 +25,6 @@ public class banco {
             System.out.println("\nDigite 1 para continuar");
             continuar = leitura.nextInt();
             System.out.println("************************************************");
-            break;
-        };
 
         while ((resposta != 4) && (continuar != 4)) {
             System.out.println("\n************************************************");
