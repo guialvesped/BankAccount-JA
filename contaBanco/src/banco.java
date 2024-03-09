@@ -5,10 +5,9 @@ public class Banco {
 
         Scanner leitura = new Scanner(System.in);
         double saldo = new Random().nextDouble(5000.00);
-        int depositar = 0;
+        double depositar = 0;
         double transferir = 0;
         int resposta = 0 ;
-        int continuar = 0;
 
 
 
@@ -17,16 +16,14 @@ public class Banco {
         System.out.println("E o tipo da sua conta:");
         String tpconta = leitura.nextLine();
         System.out.println("Acesso Concedido");
-        
+
             System.out.println("************************************************");
             System.out.println("Nome: " + nome);
             System.out.println("Tipo de conta: " + tpconta);
             System.out.printf(String.format("Saldo: R$ %.2f", saldo));
-            System.out.println("\nDigite 1 para continuar");
-            continuar = leitura.nextInt();
             System.out.println("************************************************");
 
-        while ((resposta != 4) && (continuar != 4)) {
+        while (resposta != 4) {
             System.out.println("\n************************************************");
             System.out.println("\nOperações:");
             System.out.println("1 - Consultar Saldo");
@@ -40,7 +37,7 @@ public class Banco {
             }
              else if (resposta == 2){
                 System.out.println(String.format(" Quanto deseja depositar em sua conta ? \n Saldo Atual: R$ %.2f", saldo));
-                depositar = leitura.nextInt();
+                depositar = leitura.nextDouble();
                 saldo += depositar;
                 System.out.println(String.format("Saldo atual: R$ %.2f", saldo));
                 System.out.println("Depósito concluìdo.");
