@@ -21,7 +21,7 @@ public class Banco {
             System.out.println("Nome: " + nome);
             System.out.println("Tipo de conta: " + tpconta);
             System.out.printf(String.format("Saldo: R$ %.2f", saldo));
-            System.out.println("************************************************");
+            System.out.println("\n************************************************");
 
         while (resposta != 4) {
             System.out.println("\n************************************************");
@@ -32,17 +32,20 @@ public class Banco {
             System.out.println("4 - Sair");
             resposta = leitura.nextInt();
 
-            if (resposta == 1){
+            switch (resposta){
+                case 1:
                 System.out.println(String.format(" Seu saldo atual é: R$ %.2f" , saldo));
-            }
-             else if (resposta == 2){
+                break;
+
+             case 2:
                 System.out.println(String.format(" Quanto deseja depositar em sua conta ? \n Saldo Atual: R$ %.2f", saldo));
                 depositar = leitura.nextDouble();
                 saldo += depositar;
                 System.out.println(String.format("Saldo atual: R$ %.2f", saldo));
                 System.out.println("Depósito concluìdo.");
-            }
-             else if (resposta == 3){
+                 break;
+
+                case 3:
                 System.out.println(String.format("Quanto deseja transferir ? \n Saldo atual: R$ %.2f", saldo));
                 transferir = leitura.nextDouble();
 
@@ -53,14 +56,20 @@ public class Banco {
                     saldo-=transferir;
                     System.out.println(String.format("Transferência Concluída. \nSaldo Atual: R$ %.2f", saldo));
                 }
-            }
-             else if (resposta != 4){
+                    break;
+
+                case 4:
+                    System.out.println("Atendimento finalizado");
+                    break;
+
+                default:
                 System.out.println("Opção inválida");
+                break;
             };
 
 
         };
-        System.out.println("Atendimento finalizado");
+
 
 
 
